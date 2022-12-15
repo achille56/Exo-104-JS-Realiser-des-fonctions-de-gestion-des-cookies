@@ -24,6 +24,7 @@ function getCookies() {
 function setCookie(cookieName, cookieValue) {
     // Le cookie doit être valide 2 jours et doit respecter les normes de sécurité contre les failles CSRF.
     // Votre code ici.
+    document.cookie = "user=Jean-Michel; path=/; domain=localhost; max-age= 172800000; samesite=strict";
 }
 
 
@@ -33,6 +34,9 @@ function setCookie(cookieName, cookieValue) {
  */
 function getCookie(cookieName) {
     // Votre code ici.
+    let cookie = document.cookie.split(';'); // Récupération des cookies.
+    cookie.forEach(cookie => cookie.trim()); // Suppression des espaces blancs potentiels.
+    return cookie;
 }
 
 
